@@ -1,0 +1,6 @@
+framework module Pods_Ve_ur {
+  umbrella header "Pods-Veður-umbrella.h"
+
+  export *
+  module * { export * }
+}

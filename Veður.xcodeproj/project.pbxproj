@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0A52B41F83398400BD7751 /* AppServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A52B31F83398400BD7751 /* AppServer.swift */; };
+		3C0A52B61F833C7300BD7751 /* WeatherRequestAndPraser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A52B51F833C7300BD7751 /* WeatherRequestAndPraser.swift */; };
 		3CEFF1E91F49280B00FF2B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */; };
 		3CEFF1EB1F49280B00FF2B62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */; };
 		3CEFF1EE1F49280B00FF2B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CEFF1EC1F49280B00FF2B62 /* Main.storyboard */; };
@@ -15,10 +17,13 @@
 		3CEFF1F61F49280B00FF2B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CEFF1F41F49280B00FF2B62 /* LaunchScreen.storyboard */; };
 		3CEFF1FF1F49299C00FF2B62 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEFF1FE1F49299C00FF2B62 /* CoreLocation.framework */; };
 		3CEFF2011F492E2D00FF2B62 /* Stasion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF2001F492E2D00FF2B62 /* Stasion.swift */; };
-		3CEFF2031F49327400FF2B62 /* Stasions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CEFF2021F49327400FF2B62 /* Stasions.txt */; };
+		3CEFF2031F49327400FF2B62 /* stations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CEFF2021F49327400FF2B62 /* stations.txt */; };
+		96AF2F9AD93C7B3EB70D805D /* Pods_Ve_ur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AB336C939F27B44FA55CFF /* Pods_Ve_ur.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C0A52B31F83398400BD7751 /* AppServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppServer.swift; sourceTree = "<group>"; };
+		3C0A52B51F833C7300BD7751 /* WeatherRequestAndPraser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRequestAndPraser.swift; sourceTree = "<group>"; };
 		3CEFF1E51F49280B00FF2B62 /* Veður.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veður.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +34,10 @@
 		3CEFF1F71F49280B00FF2B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEFF1FE1F49299C00FF2B62 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3CEFF2001F492E2D00FF2B62 /* Stasion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stasion.swift; sourceTree = "<group>"; };
-		3CEFF2021F49327400FF2B62 /* Stasions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Stasions.txt; path = "../../../../Python/Python Course/Stasions.txt"; sourceTree = "<group>"; };
+		3CEFF2021F49327400FF2B62 /* stations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stations.txt; path = "../../../../Python/Python Course/stations.txt"; sourceTree = "<group>"; };
+		79AB336C939F27B44FA55CFF /* Pods_Ve_ur.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ve_ur.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D756E4D479322B33F4CA64D /* Pods-Veður.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Veður.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Veður/Pods-Veður.debug.xcconfig"; sourceTree = "<group>"; };
+		C2B53E0F3A12F2C6C3A4DB32 /* Pods-Veður.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Veður.release.xcconfig"; path = "Pods/Target Support Files/Pods-Veður/Pods-Veður.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CEFF1FF1F49299C00FF2B62 /* CoreLocation.framework in Frameworks */,
+				96AF2F9AD93C7B3EB70D805D /* Pods_Ve_ur.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 				3CEFF1E71F49280B00FF2B62 /* Veður */,
 				3CEFF1E61F49280B00FF2B62 /* Products */,
 				3CEFF1FD1F49299C00FF2B62 /* Frameworks */,
+				AF97694943C18099BEC9132E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,13 +76,15 @@
 			children = (
 				3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */,
 				3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */,
-				3CEFF2021F49327400FF2B62 /* Stasions.txt */,
+				3CEFF2021F49327400FF2B62 /* stations.txt */,
 				3CEFF1EC1F49280B00FF2B62 /* Main.storyboard */,
 				3CEFF1F21F49280B00FF2B62 /* Assets.xcassets */,
 				3CEFF1F41F49280B00FF2B62 /* LaunchScreen.storyboard */,
 				3CEFF1F71F49280B00FF2B62 /* Info.plist */,
 				3CEFF1EF1F49280B00FF2B62 /* Ve_ur.xcdatamodeld */,
 				3CEFF2001F492E2D00FF2B62 /* Stasion.swift */,
+				3C0A52B31F83398400BD7751 /* AppServer.swift */,
+				3C0A52B51F833C7300BD7751 /* WeatherRequestAndPraser.swift */,
 			);
 			path = "Veður";
 			sourceTree = "<group>";
@@ -81,8 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				3CEFF1FE1F49299C00FF2B62 /* CoreLocation.framework */,
+				79AB336C939F27B44FA55CFF /* Pods_Ve_ur.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF97694943C18099BEC9132E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D756E4D479322B33F4CA64D /* Pods-Veður.debug.xcconfig */,
+				C2B53E0F3A12F2C6C3A4DB32 /* Pods-Veður.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CEFF1FA1F49280B00FF2B62 /* Build configuration list for PBXNativeTarget "Veður" */;
 			buildPhases = (
+				178A74EDB1506DCD499EADF8 /* [CP] Check Pods Manifest.lock */,
 				3CEFF1E11F49280B00FF2B62 /* Sources */,
 				3CEFF1E21F49280B00FF2B62 /* Frameworks */,
 				3CEFF1E31F49280B00FF2B62 /* Resources */,
+				BD0FF53B83DA8D565F76CA35 /* [CP] Embed Pods Frameworks */,
+				6807CEF4ED2F8DE34371DE60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,22 +172,80 @@
 			files = (
 				3CEFF1F61F49280B00FF2B62 /* LaunchScreen.storyboard in Resources */,
 				3CEFF1F31F49280B00FF2B62 /* Assets.xcassets in Resources */,
-				3CEFF2031F49327400FF2B62 /* Stasions.txt in Resources */,
+				3CEFF2031F49327400FF2B62 /* stations.txt in Resources */,
 				3CEFF1EE1F49280B00FF2B62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		178A74EDB1506DCD499EADF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Veður-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6807CEF4ED2F8DE34371DE60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Veður/Pods-Veður-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD0FF53B83DA8D565F76CA35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Veður/Pods-Veður-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Veður/Pods-Veður-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3CEFF1E11F49280B00FF2B62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0A52B61F833C7300BD7751 /* WeatherRequestAndPraser.swift in Sources */,
 				3CEFF1F11F49280B00FF2B62 /* Ve_ur.xcdatamodeld in Sources */,
 				3CEFF2011F492E2D00FF2B62 /* Stasion.swift in Sources */,
 				3CEFF1EB1F49280B00FF2B62 /* ViewController.swift in Sources */,
 				3CEFF1E91F49280B00FF2B62 /* AppDelegate.swift in Sources */,
+				3C0A52B41F83398400BD7751 /* AppServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +368,7 @@
 		};
 		3CEFF1FB1F49280B00FF2B62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D756E4D479322B33F4CA64D /* Pods-Veður.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XU2F8BZT8S;
@@ -298,6 +382,7 @@
 		};
 		3CEFF1FC1F49280B00FF2B62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2B53E0F3A12F2C6C3A4DB32 /* Pods-Veður.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XU2F8BZT8S;

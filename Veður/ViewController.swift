@@ -12,94 +12,71 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
-     var stations: [Stasion] = []
+    var appServer = AppServer()
+    var requestAndPraser = WeatherRequestAndPraser()
+    var closestStation: Station?
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var closestStasion: Stasion?
         var smallestDistance: CLLocationDistance?
+        var tempStation = Station()
         
+        //When we get the location, we calculate which station is closest to the user location
         if let userLocation = manager.location {
-            for station in stations {
+            for station in appServer.getStations() {
                 let location = CLLocation(latitude: station.latitude, longitude: station.longitude)
                 let distance = userLocation.distance(from: location)
                 if smallestDistance == nil || distance < smallestDistance! {
                     smallestDistance = distance
-                    closestStasion = station
+                    tempStation = station
                 }
             }
+            closestStation = tempStation
         }
         
-        let urlString = "http://apis.is/weather/observations/is?stations=" + (closestStasion?.stasionNumber.description)!
-        
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with:url!) { (data, response, error) in
-            if error != nil {
-                print(error)
-            } else {
+        if let currentStation = closestStation {
+            requestAndPraser.getObservasion(stationID: currentStation.stationNumber) { (inner: () throws -> observasion) -> Void in
                 do {
+                    let result = try inner()
+                    print(self.closestStation?.name)
+                    print(result)
+                } catch _ {
                     
-                    let parsedData = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
-                    
-                    print(parsedData)
-
-                } catch let error as NSError {
-                    print(error)
                 }
             }
             
-            }.resume()
+        }
+        
+        if let currentStation = closestStation {
+            requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
+                do {
+                    let result = try inner()
+                    print(self.closestStation?.name)
+                    print(result)
+                } catch _ {
+                    
+                }
+            }
+            
+        }
+
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        
-        if let path = Bundle.main.path(forResource: "Stasions", ofType: "txt"){
-            do
-            {
-                
-                let contents = try String(contentsOfFile: path)
-                let lines = contents.components(separatedBy: "\n")
-                
-                for line in lines {
-                    let prashe = line.components(separatedBy: "; ")
-                    
-                    if line != "" {
-                        let station = Stasion()
-                        station.id = Int(prashe[0])!
-                        station.name = prashe[1]
-                        station.stasionNumber = Int(prashe[2])!
-                        station.latitude = Double(prashe[3])!
-                        station.longitude = Double(prashe[4])!
-                        station.area = prashe[5]
-                        stations.append(station)
-                    }
-                    
-                }
-                
-            }
-            catch
-            {
-                // contents could not be loaded
-            }
-        }
-    
+        appServer.loadStations()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
-        
-        
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

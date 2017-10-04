@@ -1,5 +1,5 @@
 //
-//  Stasion.swift
+//  station.swift
 //  Veður
 //
 //  Created by Benedikt Óskarsson on 20/08/2017.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Stasion {
+class Station {
     
     var id: Int
     var name: String
-    var stasionNumber: Int
+    var stationNumber: Int
     var latitude: Double
     var longitude: Double
     var area: String
@@ -20,7 +20,7 @@ class Stasion {
     init() {
         id = 0
         name = ""
-        stasionNumber = 0
+        stationNumber = 0
         latitude = 0.0
         longitude = 0.0
         area = ""
