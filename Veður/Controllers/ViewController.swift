@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
@@ -15,6 +16,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var appServer = AppServer()
     var requestAndPraser = WeatherRequestAndPraser()
     var closestStation: Station?
+    @IBOutlet weak var townLbl: UILabel!
+    @IBOutlet weak var areaLbl: UILabel!
+    @IBOutlet weak var windDirectionLbl: UILabel!
+    @IBOutlet weak var windSpeedLbl: UILabel!
+    @IBOutlet weak var heatLbl: UILabel!
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var smallestDistance: CLLocationDistance?
@@ -31,6 +37,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
             closestStation = tempStation
+            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+            let userLocation2D: CLLocationCoordinate2D = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude )
+            let region: MKCoordinateRegion = MKCoordinateRegionMake(userLocation2D, span)
+             
         }
         
         if let currentStation = closestStation {
