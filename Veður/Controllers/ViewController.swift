@@ -21,6 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var windDirectionLbl: UILabel!
     @IBOutlet weak var windSpeedLbl: UILabel!
     @IBOutlet weak var heatLbl: UILabel!
+    @IBOutlet weak var stasionLbl: UILabel!
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var smallestDistance: CLLocationDistance?
@@ -37,18 +38,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
             closestStation = tempStation
-            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
-            let userLocation2D: CLLocationCoordinate2D = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude )
-            let region: MKCoordinateRegion = MKCoordinateRegionMake(userLocation2D, span)
-             
+            appServer.lookUpCurrentLocation(location: userLocation){(placemark) in
+                if let placemark = placemark {
+                    self.townLbl.text = placemark.name
+                    self.areaLbl.text = placemark.locality
+                }
+                
+            }
         }
         
         if let currentStation = closestStation {
+            self.stasionLbl.text = "Veðurstöð: " + currentStation.name
             requestAndPraser.getObservasion(stationID: currentStation.stationNumber) { (inner: () throws -> observasion) -> Void in
                 do {
                     let result = try inner()
-                    print(self.closestStation?.name)
-                    print(result)
+  
                 } catch _ {
                     
                 }
@@ -60,8 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
                 do {
                     let result = try inner()
-                    print(self.closestStation?.name)
-                    print(result)
+ 
                 } catch _ {
                     
                 }

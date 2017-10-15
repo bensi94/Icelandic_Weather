@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class AppServer {
     
@@ -47,6 +48,18 @@ class AppServer {
     
     func getStations() -> [Station] {
         return stations
+    }
+    
+    func lookUpCurrentLocation(location: CLLocation, completionHandler: @escaping (CLPlacemark?) -> Void)  {
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+            if error == nil {
+                let firstLocation = placemarks?[0]
+                completionHandler(firstLocation)
+        } else {
+            completionHandler(nil)
+        }
+      })
     }
     
 }

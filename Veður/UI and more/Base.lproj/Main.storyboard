@@ -84,7 +84,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLW-Ca-yEt" userLabel="heatLbl">
-                                <rect key="frame" x="95" y="258.5" width="185.5" height="97"/>
+                                <rect key="frame" x="95.5" y="258.5" width="185.5" height="97"/>
                                 <fontDescription key="fontDescription" name="Infinity" family="Infinity" pointSize="83"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -150,6 +150,7 @@
                     <connections>
                         <outlet property="areaLbl" destination="3Aw-v9-uW6" id="IXO-KJ-9pJ"/>
                         <outlet property="heatLbl" destination="lLW-Ca-yEt" id="fcM-0g-VyD"/>
+                        <outlet property="stasionLbl" destination="kaD-fo-Ix2" id="mOF-bG-CqD"/>
                         <outlet property="townLbl" destination="eGc-4k-vTZ" id="nQc-ql-gFO"/>
                         <outlet property="windDirectionLbl" destination="Lg8-IE-8Wn" id="Mzc-Yg-sxn"/>
                         <outlet property="windSpeedLbl" destination="Cix-fh-M8N" id="xAY-cb-0up"/>

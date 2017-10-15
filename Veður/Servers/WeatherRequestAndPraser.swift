@@ -29,9 +29,6 @@ struct foreCast {
 
 class WeatherRequestAndPraser {
     
-   
-
-    
     func getObservasion(stationID: Int, completion: @escaping (_ inner: () throws -> observasion) -> ()){
         var returnObser = observasion(time: "", windSpeed: "", windDerction: "", temperature: "", weatherDescription: "", downfallPerHour: "")
         let request = Alamofire.request("http://xmlweather.vedur.is/?op_w=xml&type=obs&lang=en&view=xml&ids=" + String(stationID))
