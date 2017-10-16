@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var windSpeedLbl: UILabel!
     @IBOutlet weak var heatLbl: UILabel!
     @IBOutlet weak var stasionLbl: UILabel!
+    @IBOutlet weak var weatherDescriptionLbl: UILabel!
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var smallestDistance: CLLocationDistance?
@@ -40,7 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             closestStation = tempStation
             appServer.lookUpCurrentLocation(location: userLocation){(placemark) in
                 if let placemark = placemark {
-                    self.townLbl.text = placemark.name
+                    self.townLbl.text = placemark.thoroughfare
                     self.areaLbl.text = placemark.locality
                 }
                 
@@ -52,7 +53,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             requestAndPraser.getObservasion(stationID: currentStation.stationNumber) { (inner: () throws -> observasion) -> Void in
                 do {
                     let result = try inner()
-  
+                    self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: result.windDerction)
+                    if(result.windDerction == "Logn"){
+                        self.windSpeedLbl.text =  "0 m/s"
+                    } else {
+                        self.windSpeedLbl.text = result.windSpeed + " m/s"
+                    }
+                    self.heatLbl.text = result.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
+                    self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: result.weatherDescription)
                 } catch _ {
                     
                 }
@@ -64,7 +72,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
                 do {
                     let result = try inner()
- 
+                    for res in result {
+                        
+                        
+                    }
                 } catch _ {
                     
                 }

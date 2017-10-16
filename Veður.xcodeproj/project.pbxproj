@@ -31,6 +31,8 @@
 		3C4222EA1F8917B200A8F4C8 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C4222D11F8906E800A8F4C8 /* Raleway-Thin.ttf */; };
 		3C4222EB1F8917B200A8F4C8 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C4222C31F8906E600A8F4C8 /* Raleway-ThinItalic.ttf */; };
 		3C7BEF511F8AE81D001D2B3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BEF501F8AE81D001D2B3B /* MapKit.framework */; };
+		3CA405FE1F94034E0083B399 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA405FD1F93FC640083B399 /* weathericons-regular-webfont.ttf */; };
+		3CA406001F94320F0083B399 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA405FF1F94318B0083B399 /* Roboto-Thin.ttf */; };
 		3CEFF1E91F49280B00FF2B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */; };
 		3CEFF1EB1F49280B00FF2B62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */; };
 		3CEFF1EE1F49280B00FF2B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CEFF1EC1F49280B00FF2B62 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		3C4222D51F8906E900A8F4C8 /* Raleway-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-LightItalic.ttf"; path = "../../../../../../../Library/Fonts/Raleway-LightItalic.ttf"; sourceTree = "<group>"; };
 		3C4222D61F890E9C00A8F4C8 /* Infinity.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Infinity.ttf; sourceTree = "<group>"; };
 		3C7BEF501F8AE81D001D2B3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3CA405FD1F93FC640083B399 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
+		3CA405FF1F94318B0083B399 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		3CEFF1E51F49280B00FF2B62 /* Veður.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veður.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		3C4222C11F89068400A8F4C8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3CA405FF1F94318B0083B399 /* Roboto-Thin.ttf */,
+				3CA405FD1F93FC640083B399 /* weathericons-regular-webfont.ttf */,
 				3C4222D61F890E9C00A8F4C8 /* Infinity.ttf */,
 				3C4222CE1F8906E800A8F4C8 /* Raleway Thin.otf */,
 				3C4222CA1F8906E700A8F4C8 /* Raleway Thin.ttf */,
@@ -252,7 +258,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Benzi;
 				TargetAttributes = {
 					3CEFF1E41F49280B00FF2B62 = {
@@ -297,6 +303,7 @@
 				3C4222DA1F8917B200A8F4C8 /* Raleway-Black.ttf in Resources */,
 				3C4222DB1F8917B200A8F4C8 /* Raleway-BlackItalic.ttf in Resources */,
 				3C4222DC1F8917B200A8F4C8 /* Raleway-Bold.ttf in Resources */,
+				3CA405FE1F94034E0083B399 /* weathericons-regular-webfont.ttf in Resources */,
 				3C4222DD1F8917B200A8F4C8 /* Raleway-BoldItalic.ttf in Resources */,
 				3C4222DE1F8917B200A8F4C8 /* Raleway-ExtraBold.ttf in Resources */,
 				3C4222DF1F8917B200A8F4C8 /* Raleway-ExtraBoldItalic.ttf in Resources */,
@@ -307,6 +314,7 @@
 				3C4222E41F8917B200A8F4C8 /* Raleway-LightItalic.ttf in Resources */,
 				3C4222E51F8917B200A8F4C8 /* Raleway-Medium.ttf in Resources */,
 				3C4222E61F8917B200A8F4C8 /* Raleway-MediumItalic.ttf in Resources */,
+				3CA406001F94320F0083B399 /* Roboto-Thin.ttf in Resources */,
 				3C4222E71F8917B200A8F4C8 /* Raleway-Regular.ttf in Resources */,
 				3C4222E81F8917B200A8F4C8 /* Raleway-SemiBold.ttf in Resources */,
 				3C4222E91F8917B200A8F4C8 /* Raleway-SemiBoldItalic.ttf in Resources */,
@@ -423,7 +431,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -431,7 +441,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -474,7 +488,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -482,7 +498,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
