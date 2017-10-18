@@ -10,12 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-    
+class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     let manager = CLLocationManager()
     var appServer = AppServer()
     var requestAndPraser = WeatherRequestAndPraser()
     var closestStation: Station?
+    var foreCasts = [foreCast?]()
     @IBOutlet weak var townLbl: UILabel!
     @IBOutlet weak var areaLbl: UILabel!
     @IBOutlet weak var windDirectionLbl: UILabel!
@@ -23,6 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var heatLbl: UILabel!
     @IBOutlet weak var stasionLbl: UILabel!
     @IBOutlet weak var weatherDescriptionLbl: UILabel!
+    @IBOutlet weak var foreCastCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let ObsrvResult = try inner()
                     self.requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
                         do {
-                            let ForeCastResult = try inner()
-                            self.updateWeatherLbls(observ: ObsrvResult, forecast: ForeCastResult)
+                            let foreCastResult = try inner()
+                            self.updateWeatherLbls(observ: ObsrvResult, forecast: foreCastResult)
+                            if self.foreCasts.count != foreCastResult.count{
+                                self.foreCasts = foreCastResult
+                                self.foreCastCollectionView.reloadData()
+                                print(self.foreCasts.count)
+                            }
                         } catch _ {
                             
                         }
@@ -163,6 +169,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             //TODO: SHOW SOME ERROR
         }
       
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(foreCasts.count)
+        return foreCasts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "singleFCCell", for: indexPath) as? SingleFCCell {
+            if let forecast = foreCasts[indexPath.item]{
+                cell.configureCell(forecast: forecast)
+            }
+            return cell
+        } else {
+            return SingleFCCell()
+        }
+        
     }
     
 
