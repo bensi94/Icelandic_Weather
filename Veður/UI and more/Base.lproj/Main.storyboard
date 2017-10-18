@@ -63,19 +63,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veðurstöð: Stórhöfði " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="kaD-fo-Ix2" userLabel="stationLbl">
-                                <rect key="frame" x="109.5" y="633.5" width="155" height="20"/>
+                                <rect key="frame" x="106.5" y="633.5" width="161" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-LightItalic" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norðan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-IE-8Wn" userLabel="derectionLbl">
-                                <rect key="frame" x="16" y="154.5" width="133" height="45"/>
+                                <rect key="frame" x="16" y="154.5" width="125.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="38"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cix-fh-M8N" userLabel="windspeedLbl">
-                                <rect key="frame" x="16" y="202.5" width="131.5" height="47"/>
+                                <rect key="frame" x="16" y="202.5" width="124" height="47"/>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                 <rect key="frame" x="38" y="379.5" width="299" height="4"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLW-Ca-yEt" userLabel="heatLbl">
-                                <rect key="frame" x="99.5" y="259" width="176.5" height="97"/>
+                                <rect key="frame" x="95" y="259" width="185.5" height="97"/>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="83"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -105,19 +105,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="52" translatesAutoresizingMaskIntoConstraints="NO" id="qVB-FP-OuM" userLabel="weatherDescriptionLbl">
-                                <rect key="frame" x="243.5" y="127.5" width="115.5" height="150.5"/>
+                                <rect key="frame" x="239.5" y="156.5" width="119.5" height="121.5"/>
                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="104"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veðurspá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kcb-uc-d6G">
-                                <rect key="frame" x="38" y="395.5" width="160" height="38"/>
+                                <rect key="frame" x="38" y="395.5" width="160" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="38"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5AI-jL-nwI">
-                                <rect key="frame" x="0.0" y="441" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="447.5" width="375" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="Qju-hv-1qU"/>
@@ -149,7 +149,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="52" translatesAutoresizingMaskIntoConstraints="NO" id="9xb-65-zj2" userLabel="weatherDescriptionLbl">
-                                                    <rect key="frame" x="34.5" y="23" width="32.5" height="38"/>
+                                                    <rect key="frame" x="34" y="23" width="33.5" height="38"/>
                                                     <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="29"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
