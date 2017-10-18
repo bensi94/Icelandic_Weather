@@ -46,7 +46,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //If we have our closest stasion we send the requests to get our weather information and update our lables
         if let currentStation = closestStation {
             self.stasionLbl.text = "Veðurstöð: " + currentStation.name
-            updateWeatherLbls(observ: getObservasion(stationID: currentStation.stationNumber), forecast: getForeCast(stationID: currentStation.stationNumber))
+            requestAndPraser.getObservasion(stationID: currentStation.stationNumber) { (inner: () throws -> observasion) -> Void in
+                do {
+                    let ObsrvResult = try inner()
+                    self.requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
+                        do {
+                            let ForeCastResult = try inner()
+                            self.updateWeatherLbls(observ: ObsrvResult, forecast: ForeCastResult)
+                        } catch _ {
+                            
+                        }
+                    }
+                    
+                } catch _ {
+                    
+                }
+            }
             
         }
         
@@ -87,44 +102,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func getObservasion(stationID: Int) -> observasion? {
-        var returnObser: observasion?
-        requestAndPraser.getObservasion(stationID: stationID) { (inner: () throws -> observasion) -> Void in
-            do {
-                let result = try inner()
-                returnObser = result
-                
-            } catch _ {
-                
-            }
-        }
-        return returnObser
-    }
-    
-    func getForeCast(stationID: Int) -> [foreCast?]? {
-        var returnForec: [foreCast?]?
-        requestAndPraser.getForecast(stationID: stationID) { (inner: () throws -> [foreCast?]) -> Void in
-            do {
-                let result = try inner()
-                returnForec = result
-            } catch _ {
-                
-            }
-        }
-        
-        return returnForec
-    }
-    
     func updateWeatherLbls(observ: observasion?, forecast: [foreCast?]?) {
+        //In here we use closest forecast to back up if we don't get the information we need from observasions
         if let observ = observ, let forecast = forecast {
-            self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: observ.windDerction)
+            if observ.windDerction.isEmpty{
+                if forecast.indices.contains(0){
+                    let closestForecast = forecast[0]!
+                    self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: closestForecast.windDerction)
+                }
+            } else {
+                self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: observ.windDerction)
+            }
             if(observ.windDerction == "Logn"){
                 self.windSpeedLbl.text =  "0 m/s"
             } else {
-                self.windSpeedLbl.text = observ.windSpeed + " m/s"
+                
+                if observ.windSpeed.isEmpty{
+                    if forecast.indices.contains(0){
+                        let closestForecast = forecast[0]!
+                        self.windSpeedLbl.text = closestForecast.windSpeed + " m/s"
+                    }
+                } else {
+                   self.windSpeedLbl.text = observ.windSpeed + " m/s"
+                }
+                
             }
-            self.heatLbl.text = observ.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
-            self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: observ.weatherDescription)
+            if observ.temperature.isEmpty{
+                if forecast.indices.contains(0){
+                    let closestForecast = forecast[0]!
+                    self.heatLbl.text = closestForecast.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
+                }
+            } else {
+                self.heatLbl.text = observ.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
+            }
+            
+            if observ.weatherDescription.isEmpty{
+                if forecast.indices.contains(0){
+                    let closestForecast = forecast[0]!
+                    self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: closestForecast.weatherDescription)
+                }
+            } else {
+               self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: observ.weatherDescription)
+            }
+            
+            
         } else if let observ = observ {
             //TODO: SHOW SOME ERROR ON FORECAST
             self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: observ.windDerction)
@@ -136,7 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.heatLbl.text = observ.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
             self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: observ.weatherDescription)
         } else if let forecast = forecast {
-            //TODO: SHOW SOME ERROR ON OBSERV 
+            //TODO: SHOW SOME ERROR ON OBSERV
             
         } else {
             //TODO: SHOW SOME ERROR
