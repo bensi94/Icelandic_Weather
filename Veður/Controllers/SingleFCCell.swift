@@ -16,10 +16,16 @@ class SingleFCCell: UICollectionViewCell {
     @IBOutlet weak var fTempLbl: UILabel!
     
     func configureCell(forecast: foreCast){
-        fTimeLbl.text = forecast.time
-        fWindLbl.text = forecast.windSpeed
-        fWeatherDescription.text = forecast.weatherDescription
-        fTempLbl.text = forecast.temperature
+        let forGettingIcon = WeatherRequestAndPraser()
+        if !forecast.time.isEmpty {
+            let time = forecast.time
+            let indexStartOfText = time.index(time.startIndex, offsetBy: 11)
+            let indexEndOfText = time.index(time.endIndex, offsetBy: -3)
+            fTimeLbl.text = String(time[indexStartOfText..<indexEndOfText])
+        }
+        fWindLbl.text = forecast.windDerction + " " + forecast.windSpeed + " m/s"
+        fWeatherDescription.text = forGettingIcon.descriptionToIcon(description: forecast.weatherDescription)
+        fTempLbl.text = forecast.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
     }
     
 }
