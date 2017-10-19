@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import CoreLocation
 
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
+}
+
 class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     let manager = CLLocationManager()
     var appServer = AppServer()
@@ -27,13 +31,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notfiCenter = NotificationCenter.default
+        notfiCenter.addObserver(self, selector: #selector(reloadCollectionView), name: .reload, object: nil)
         appServer.loadStations()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
+        
     }
+    
+    
     //The reason we do a lot of the logic inside this function is that we want the app to update everything depending on the user location
     //so when the location changes we need to update most of the app, also we want the app to keep on updateing the information if the location is not changeing
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -53,9 +62,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
                     self.requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
                         do {
                             let foreCastResult = try inner()
-                            self.updateWeatherLbls(observ: ObsrvResult, forecast: foreCastResult)
+                            let relevantForecast = self.appServer.relevantForecastCount(foreCasts: foreCastResult)
+                            self.updateWeatherLbls(observ: ObsrvResult, forecast: relevantForecast)
                             if self.foreCasts.count != foreCastResult.count{
-                                self.foreCasts = foreCastResult
+                                self.foreCasts = relevantForecast
                                 self.foreCastCollectionView.reloadData()
                                 print(self.foreCasts.count)
                             }
@@ -93,15 +103,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             //If we found our loactaion we assign our placemarks here, we do checks if we find the placemark we want if not we take backup option
             if let placemark = placemark {
                 if let thoroughfare = placemark.thoroughfare {
-                    self.townLbl.text = thoroughfare
+                    self.areaLbl.text = thoroughfare
                 } else {
-                    self.townLbl.text = placemark.name
+                    self.areaLbl.text = placemark.name
                 }
                 
                 if let locality = placemark.locality{
-                    self.areaLbl.text = locality
+                    self.townLbl.text = locality
                 } else {
-                    self.areaLbl.text = placemark.country
+                    self.townLbl.text = placemark.country
                 }
             }
             
@@ -186,6 +196,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             return SingleFCCell()
         }
         
+    }
+    
+    @objc func reloadCollectionView(_ notification: Notification) {
+        foreCastCollectionView.reloadData()
+        foreCastCollectionView.setContentOffset(.zero, animated: false)
     }
     
 

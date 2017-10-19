@@ -10,9 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-UltraLight</string>
-            <string>HelveticaNeue-UltraLightItalic</string>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-MediumItalic</string>
         </array>
         <array key="Raleway Thin.otf">
             <string>Raleway-Thin</string>
@@ -57,7 +58,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stykkishólmur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-4k-vTZ" userLabel="townLbl">
-                                <rect key="frame" x="16" y="42" width="297" height="55"/>
+                                <rect key="frame" x="38" y="42" width="297" height="55"/>
                                 <fontDescription key="fontDescription" name="Raleway-ExtraLight" family="Raleway" pointSize="47"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -68,14 +69,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snæfellsnes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Aw-v9-uW6" userLabel="streetlbl">
+                                <rect key="frame" x="130.5" y="105" width="114.5" height="25"/>
+                                <fontDescription key="fontDescription" name="Raleway-ExtraLightItalic" family="Raleway" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norðan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-IE-8Wn" userLabel="derectionLbl">
-                                <rect key="frame" x="16" y="154.5" width="125.5" height="45"/>
+                                <rect key="frame" x="38" y="154" width="125.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="38"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cix-fh-M8N" userLabel="windspeedLbl">
-                                <rect key="frame" x="16" y="202.5" width="124" height="47"/>
+                                <rect key="frame" x="38" y="202" width="125.5" height="47"/>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -98,18 +105,6 @@
                                     <constraint firstAttribute="width" constant="1" id="z5Z-ZB-sdl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snæfellsnes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Aw-v9-uW6" userLabel="arealbl">
-                                <rect key="frame" x="130.5" y="105" width="114.5" height="25"/>
-                                <fontDescription key="fontDescription" name="Raleway-ExtraLightItalic" family="Raleway" pointSize="21"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="52" translatesAutoresizingMaskIntoConstraints="NO" id="qVB-FP-OuM" userLabel="weatherDescriptionLbl">
-                                <rect key="frame" x="239.5" y="156.5" width="119.5" height="121.5"/>
-                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="104"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veðurspá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kcb-uc-d6G">
                                 <rect key="frame" x="38" y="395.5" width="160" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="38"/>
@@ -118,46 +113,46 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5AI-jL-nwI">
                                 <rect key="frame" x="0.0" y="447.5" width="375" height="120"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.10686001712328767" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.21296865520863761" blue="0.92634591304905334" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="uWa-aV-jk1"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="10" id="96N-vo-PYi">
-                                    <size key="itemSize" width="119" height="119"/>
+                                    <size key="itemSize" width="82" height="119"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="singleFCCell" id="828-7F-K7c" customClass="SingleFCCell" customModule="Veður" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.5" width="119" height="119"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="82" height="119"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="82" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="52d-4D-Oeh" userLabel="fTimeLbl">
-                                                    <rect key="frame" x="35" y="3" width="48" height="22"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
+                                                    <rect key="frame" x="17" y="3" width="48" height="23"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 7m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-l7-Hjo" userLabel="fWindLbl">
-                                                    <rect key="frame" x="39" y="92.5" width="41.5" height="16.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLightItalic" family="Helvetica Neue" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 7m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-l7-Hjo" userLabel="fWindLbl">
+                                                    <rect key="frame" x="18.5" y="94.5" width="45" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="52" translatesAutoresizingMaskIntoConstraints="NO" id="9xb-65-zj2" userLabel="weatherDescriptionLbl">
-                                                    <rect key="frame" x="43" y="28" width="33" height="34"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9xb-65-zj2" userLabel="weatherDescriptionLbl">
+                                                    <rect key="frame" x="25" y="29" width="33" height="34"/>
                                                     <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="29"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="c4L-u5-igZ" userLabel="fTempLbl">
-                                                    <rect key="frame" x="36" y="65" width="47" height="24.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="21"/>
+                                                    <rect key="frame" x="18" y="66" width="47" height="25.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -186,6 +181,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UbC-Vx-jmP"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="52" translatesAutoresizingMaskIntoConstraints="NO" id="qVB-FP-OuM" userLabel="weatherDescriptionLbl">
+                                <rect key="frame" x="217" y="156.5" width="119.5" height="121.5"/>
+                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="104"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -193,13 +194,14 @@
                             <constraint firstItem="lLW-Ca-yEt" firstAttribute="top" secondItem="Cix-fh-M8N" secondAttribute="bottom" constant="10" id="2yN-KO-U7c"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kcb-uc-d6G" secondAttribute="trailing" constant="20" symbolic="YES" id="44e-Cn-bM1"/>
                             <constraint firstItem="LkA-Oc-hSG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="495-AW-MLi"/>
+                            <constraint firstItem="oeG-Hl-FzJ" firstAttribute="trailing" secondItem="qVB-FP-OuM" secondAttribute="trailing" id="5fj-7A-and"/>
                             <constraint firstItem="oeG-Hl-FzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="68k-Pw-472"/>
                             <constraint firstItem="5AI-jL-nwI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6Zq-Ss-Qfm"/>
                             <constraint firstItem="lLW-Ca-yEt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8mM-59-Kmc"/>
+                            <constraint firstItem="Lg8-IE-8Wn" firstAttribute="leading" secondItem="eGc-4k-vTZ" secondAttribute="leading" id="A3K-hE-rh3"/>
                             <constraint firstItem="5AI-jL-nwI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AFf-ls-CuO"/>
                             <constraint firstItem="eGc-4k-vTZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="AI1-WF-dlO"/>
                             <constraint firstItem="Kug-1v-tEc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AdR-I7-60q"/>
-                            <constraint firstItem="eGc-4k-vTZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CkV-m3-YZI"/>
                             <constraint firstItem="kcb-uc-d6G" firstAttribute="leading" secondItem="oeG-Hl-FzJ" secondAttribute="leading" id="EEF-be-zEY"/>
                             <constraint firstItem="LkA-Oc-hSG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EjV-IY-KMJ"/>
                             <constraint firstItem="3Aw-v9-uW6" firstAttribute="top" secondItem="eGc-4k-vTZ" secondAttribute="bottom" constant="8" id="F1i-pK-z3Q"/>
@@ -213,14 +215,13 @@
                             <constraint firstItem="Kug-1v-tEc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="V1a-Wr-Uux"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eGc-4k-vTZ" secondAttribute="trailing" id="WNm-Z7-wvF"/>
                             <constraint firstItem="Kug-1v-tEc" firstAttribute="top" secondItem="qVB-FP-OuM" secondAttribute="bottom" constant="53.5" id="WNt-tn-4WQ"/>
+                            <constraint firstItem="kcb-uc-d6G" firstAttribute="leading" secondItem="eGc-4k-vTZ" secondAttribute="leading" id="WYQ-oG-NtH"/>
                             <constraint firstItem="onx-Z8-bci" firstAttribute="leading" secondItem="LkA-Oc-hSG" secondAttribute="leading" id="X8u-wm-yyT"/>
-                            <constraint firstItem="Cix-fh-M8N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Xay-8r-45H"/>
                             <constraint firstItem="kcb-uc-d6G" firstAttribute="top" secondItem="oeG-Hl-FzJ" secondAttribute="bottom" constant="12" id="YXB-IF-hJp"/>
-                            <constraint firstItem="Lg8-IE-8Wn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a8O-u1-uvz"/>
                             <constraint firstItem="Cix-fh-M8N" firstAttribute="top" secondItem="Lg8-IE-8Wn" secondAttribute="bottom" constant="4" id="bf6-7h-eTG"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3Aw-v9-uW6" secondAttribute="trailing" id="bwC-Vt-aQq"/>
                             <constraint firstItem="oeG-Hl-FzJ" firstAttribute="top" secondItem="lLW-Ca-yEt" secondAttribute="bottom" constant="24" id="di3-Wx-hQU"/>
-                            <constraint firstItem="qVB-FP-OuM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="e5A-3O-yJE"/>
+                            <constraint firstItem="Cix-fh-M8N" firstAttribute="leading" secondItem="eGc-4k-vTZ" secondAttribute="leading" id="gMs-fR-MFo"/>
                             <constraint firstItem="qCt-l5-uhh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gTI-c3-PvI"/>
                             <constraint firstItem="5AI-jL-nwI" firstAttribute="top" secondItem="kcb-uc-d6G" secondAttribute="bottom" constant="7.5" id="h41-k7-QdU"/>
                             <constraint firstAttribute="bottom" secondItem="LkA-Oc-hSG" secondAttribute="bottom" id="kue-O8-coP"/>
