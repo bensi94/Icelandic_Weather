@@ -25,6 +25,7 @@ struct foreCast {
     var windDerction: String
     var temperature: String
     var weatherDescription: String
+    var dummyCell: Bool = false
 }
 
 class WeatherRequestAndPraser {
@@ -63,7 +64,7 @@ class WeatherRequestAndPraser {
                 if let data = response.data {
                     let xml = XML.parse(data)
                     for foreCastXml in xml["forecasts", "station", "forecast"] {
-                        var currentForeCast = foreCast(time: "", windSpeed: "", windDerction: "", temperature: "", weatherDescription: "")
+                        var currentForeCast = foreCast(time: "", windSpeed: "", windDerction: "", temperature: "", weatherDescription: "", dummyCell: false)
                         currentForeCast.time ?= foreCastXml["ftime"].text
                         currentForeCast.windSpeed ?= foreCastXml["F"].text
                         currentForeCast.windDerction ?= foreCastXml["D"].text

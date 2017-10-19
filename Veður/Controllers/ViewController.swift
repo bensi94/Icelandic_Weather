@@ -62,7 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
                     self.requestAndPraser.getForecast(stationID: currentStation.stationNumber) { (inner: () throws -> [foreCast?]) -> Void in
                         do {
                             let foreCastResult = try inner()
-                            let relevantForecast = self.appServer.relevantForecastCount(foreCasts: foreCastResult)
+                            let relevantForecast = self.appServer.relevantForecast(foreCasts: foreCastResult)
                             self.updateWeatherLbls(observ: ObsrvResult, forecast: relevantForecast)
                             if self.foreCasts.count != foreCastResult.count{
                                 self.foreCasts = relevantForecast
@@ -182,11 +182,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(foreCasts.count)
         return foreCasts.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "singleFCCell", for: indexPath) as? SingleFCCell {
             if let forecast = foreCasts[indexPath.item]{
                 cell.configureCell(forecast: forecast)

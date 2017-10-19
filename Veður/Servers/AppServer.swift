@@ -62,7 +62,7 @@ class AppServer {
       })
     }
     
-    func relevantForecastCount(foreCasts: [foreCast?]) -> [foreCast?] {
+    func relevantForecast(foreCasts: [foreCast?]) -> [foreCast?] {
         var returnForeCastArray: [foreCast?] = [foreCast?]()
         for forecast in foreCasts {
             if let fc = forecast {
@@ -74,12 +74,10 @@ class AppServer {
                 if weatherTimeStmp > timestamp {
                     returnForeCastArray.append(fc)
                 }
-                
+
             }
-            
         }
         return returnForeCastArray
         
     }
-    
 }
