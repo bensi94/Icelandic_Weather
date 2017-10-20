@@ -41,8 +41,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
-        
     }
     
     
@@ -67,10 +65,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
                             let foreCastResult = try inner()
                             let relevantForecast = self.appServer.relevantForecast(foreCasts: foreCastResult)
                             self.updateWeatherLbls(observ: ObsrvResult, forecast: relevantForecast)
+                            self.updateForcastDate()
                             if self.foreCasts.count != foreCastResult.count{
                                 self.foreCasts = relevantForecast
                                 self.foreCastCollectionView.reloadData()
-                                print(self.foreCasts.count)
                             }
                         } catch _ {
                             
@@ -203,7 +201,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        self.updateForcastDate()
+    }
+    
+    func updateForcastDate()  {
         var closestCell: UICollectionViewCell = UICollectionViewCell()
         if foreCastCollectionView.visibleCells.indices.contains(0){
             closestCell = foreCastCollectionView.visibleCells[0]
@@ -216,33 +217,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             if let item = indexItem {
                 if(item == 0 || item == 1){
                     if let time = foreCasts[item]?.time{
-                        print(self.appServer.getTimeStamp(forecastTime: time))
+                        let timeStamp: TimeInterval = self.appServer.getTimeStamp(forecastTime: time)
+                        self.dayLbl.text = valueConverter.getDay(timeStamp: timeStamp)
+                        self.dateLbl.text = valueConverter.getDate(timeStamp: timeStamp)
                     }
                 } else {
                     if let time = foreCasts[item-2]?.time{
-                        print(self.appServer.getTimeStamp(forecastTime: time))
+                        let timeStamp: TimeInterval = self.appServer.getTimeStamp(forecastTime: time)
+                        self.dayLbl.text = valueConverter.getDay(timeStamp: timeStamp)
+                        self.dateLbl.text = valueConverter.getDate(timeStamp: timeStamp)
                     }
                 }
             }
         }
-        
-
-//        if foreCastCollectionView.indexPathsForVisibleItems.indices.contains(4){
-//            print(foreCasts[(foreCastCollectionView.indexPathsForVisibleItems[4].item)]?.time)
-//        }
-       
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if foreCastCollectionView.indexPathsForVisibleItems.indices.contains(4){
-            print("Hello" + (foreCasts[(foreCastCollectionView.indexPathsForVisibleItems[4].item)]?.time)!)
-        }
-        print()
     }
     
     @objc func reloadCollectionView(_ notification: Notification) {
         foreCastCollectionView.reloadData()
         foreCastCollectionView.setContentOffset(.zero, animated: false)
+        self.updateForcastDate()
     }
     
 

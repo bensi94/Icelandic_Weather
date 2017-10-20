@@ -54,6 +54,27 @@ class ValueConverter {
     }
     
     func getDay(timeStamp: TimeInterval) -> String {
-        return ""
+        let calander = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        let date = NSDate(timeIntervalSince1970: timeStamp)
+        switch  calander.component(.weekday, from: date as Date) {
+        case 1: return "Sunnudagur"
+        case 2: return "Mánudagur"
+        case 3: return "Þriðjudagur"
+        case 4: return "Miðvikudagur"
+        case 5: return "Fimmtudagur"
+        case 6: return "Föstudagur"
+        case 7: return "Laugardagur"
+        default:
+            return ""
+        }
+    }
+    
+    func getDate(timeStamp: TimeInterval) -> String {
+        let date = NSDate(timeIntervalSince1970: timeStamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "dd-MM" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date as Date)
+        return  strDate.replacingOccurrences(of: "-", with: "/")
     }
 }
