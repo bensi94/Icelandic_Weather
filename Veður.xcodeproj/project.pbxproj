@@ -34,6 +34,9 @@
 		3C7BEF511F8AE81D001D2B3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7BEF501F8AE81D001D2B3B /* MapKit.framework */; };
 		3CA405FE1F94034E0083B399 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA405FD1F93FC640083B399 /* weathericons-regular-webfont.ttf */; };
 		3CA406001F94320F0083B399 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA405FF1F94318B0083B399 /* Roboto-Thin.ttf */; };
+		3CC533AD1F9A2BEA00308754 /* observasion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC533AC1F9A2BEA00308754 /* observasion.swift */; };
+		3CC533AF1F9A2BFC00308754 /* foreCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC533AE1F9A2BFC00308754 /* foreCast.swift */; };
+		3CC533B11F9A2C5600308754 /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC533B01F9A2C5600308754 /* ValueConverter.swift */; };
 		3CEFF1E91F49280B00FF2B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */; };
 		3CEFF1EB1F49280B00FF2B62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */; };
 		3CEFF1EE1F49280B00FF2B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CEFF1EC1F49280B00FF2B62 /* Main.storyboard */; };
@@ -74,6 +77,9 @@
 		3C7BEF501F8AE81D001D2B3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3CA405FD1F93FC640083B399 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		3CA405FF1F94318B0083B399 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		3CC533AC1F9A2BEA00308754 /* observasion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = observasion.swift; sourceTree = "<group>"; };
+		3CC533AE1F9A2BFC00308754 /* foreCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foreCast.swift; sourceTree = "<group>"; };
+		3CC533B01F9A2C5600308754 /* ValueConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
 		3CEFF1E51F49280B00FF2B62 /* Veður.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veður.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEFF1E81F49280B00FF2B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CEFF1EA1F49280B00FF2B62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				3CEFF2001F492E2D00FF2B62 /* Stasion.swift */,
+				3CC533AC1F9A2BEA00308754 /* observasion.swift */,
+				3CC533AE1F9A2BFC00308754 /* foreCast.swift */,
 			);
 			path = "Entity Classes";
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 			children = (
 				3C0A52B31F83398400BD7751 /* AppServer.swift */,
 				3C0A52B51F833C7300BD7751 /* WeatherRequestAndPraser.swift */,
+				3CC533B01F9A2C5600308754 /* ValueConverter.swift */,
 			);
 			path = Servers;
 			sourceTree = "<group>";
@@ -394,12 +403,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0A52B61F833C7300BD7751 /* WeatherRequestAndPraser.swift in Sources */,
+				3CC533AF1F9A2BFC00308754 /* foreCast.swift in Sources */,
 				3CEFF1F11F49280B00FF2B62 /* Ve_ur.xcdatamodeld in Sources */,
 				3C43A0C01F96F23E00035E86 /* SingleFCCell.swift in Sources */,
+				3CC533B11F9A2C5600308754 /* ValueConverter.swift in Sources */,
 				3CEFF2011F492E2D00FF2B62 /* Stasion.swift in Sources */,
 				3CEFF1EB1F49280B00FF2B62 /* ViewController.swift in Sources */,
 				3CEFF1E91F49280B00FF2B62 /* AppDelegate.swift in Sources */,
 				3C0A52B41F83398400BD7751 /* AppServer.swift in Sources */,
+				3CC533AD1F9A2BEA00308754 /* observasion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

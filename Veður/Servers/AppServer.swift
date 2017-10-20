@@ -64,20 +64,23 @@ class AppServer {
     
     func relevantForecast(foreCasts: [foreCast?]) -> [foreCast?] {
         var returnForeCastArray: [foreCast?] = [foreCast?]()
+        let timeStampNow = NSDate().timeIntervalSince1970
         for forecast in foreCasts {
             if let fc = forecast {
-                let timestamp = NSDate().timeIntervalSince1970
-                let dformatter = DateFormatter()
-                dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let weatherTime = dformatter.date(from: fc.time)
-                let weatherTimeStmp: TimeInterval = weatherTime!.timeIntervalSince1970
-                if weatherTimeStmp > timestamp {
+                if getTimeStamp(forecastTime: fc.time) > timeStampNow {
                     returnForeCastArray.append(fc)
                 }
-
             }
         }
         return returnForeCastArray
         
+    }
+    
+    func getTimeStamp(forecastTime: String) -> TimeInterval{
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let weatherTime = dformatter.date(from: forecastTime)
+        let weatherTimeStmp: TimeInterval = weatherTime!.timeIntervalSince1970
+        return weatherTimeStmp
     }
 }

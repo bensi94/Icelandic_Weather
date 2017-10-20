@@ -17,7 +17,7 @@ class SingleFCCell: UICollectionViewCell {
     @IBOutlet weak var splitLineMidnigth: UIImageView!
     
     func configureCell(forecast: foreCast){
-        let forGettingIcon = WeatherRequestAndPraser()
+        let forGettingIcon = ValueConverter()
         self.splitLineMidnigth.isHidden = true
         if !forecast.time.isEmpty {
             let time = forecast.time

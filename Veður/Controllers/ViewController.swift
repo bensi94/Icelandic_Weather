@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     let manager = CLLocationManager()
     var appServer = AppServer()
     var requestAndPraser = WeatherRequestAndPraser()
+    var valueConverter = ValueConverter()
     var closestStation: Station?
     var foreCasts = [foreCast?]()
     @IBOutlet weak var townLbl: UILabel!
@@ -28,6 +29,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     @IBOutlet weak var stasionLbl: UILabel!
     @IBOutlet weak var weatherDescriptionLbl: UILabel!
     @IBOutlet weak var foreCastCollectionView: UICollectionView!
+    @IBOutlet weak var dayLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,10 +127,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             if observ.windDerction.isEmpty{
                 if forecast.indices.contains(0){
                     let closestForecast = forecast[0]!
-                    self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: closestForecast.windDerction)
+                    self.windDirectionLbl.text = self.valueConverter.windDirection(direction: closestForecast.windDerction)
                 }
             } else {
-                self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: observ.windDerction)
+                self.windDirectionLbl.text = self.valueConverter.windDirection(direction: observ.windDerction)
             }
             if(observ.windDerction == "Logn"){
                 self.windSpeedLbl.text =  "0 m/s"
@@ -155,23 +158,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             if observ.weatherDescription.isEmpty{
                 if forecast.indices.contains(0){
                     let closestForecast = forecast[0]!
-                    self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: closestForecast.weatherDescription)
+                    self.weatherDescriptionLbl.text = self.valueConverter.descriptionToIcon(description: closestForecast.weatherDescription)
                 }
             } else {
-               self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: observ.weatherDescription)
+               self.weatherDescriptionLbl.text = self.valueConverter.descriptionToIcon(description: observ.weatherDescription)
             }
             
             
         } else if let observ = observ {
             //TODO: SHOW SOME ERROR ON FORECAST
-            self.windDirectionLbl.text = self.requestAndPraser.windDirection(direction: observ.windDerction)
+            self.windDirectionLbl.text = self.valueConverter.windDirection(direction: observ.windDerction)
             if(observ.windDerction == "Logn"){
                 self.windSpeedLbl.text =  "0 m/s"
             } else {
                 self.windSpeedLbl.text = observ.windSpeed + " m/s"
             }
             self.heatLbl.text = observ.temperature.replacingOccurrences(of: ",", with: ".") + "°C"
-            self.weatherDescriptionLbl.text = self.requestAndPraser.descriptionToIcon(description: observ.weatherDescription)
+            self.weatherDescriptionLbl.text = self.valueConverter.descriptionToIcon(description: observ.weatherDescription)
         } else if let forecast = forecast {
             //TODO: SHOW SOME ERROR ON OBSERV
             
@@ -197,6 +200,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             return SingleFCCell()
         }
         
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        var closestCell: UICollectionViewCell = UICollectionViewCell()
+        if foreCastCollectionView.visibleCells.indices.contains(0){
+            closestCell = foreCastCollectionView.visibleCells[0]
+            for cell in foreCastCollectionView.visibleCells {
+                if abs(closestCell.frame.minX - dayLbl.frame.minX) <  abs(cell.frame.minX - dayLbl.frame.minX){
+                    closestCell = cell
+                }
+            }
+            let indexItem: Int? = self.foreCastCollectionView.indexPath(for: closestCell)?.item
+            if let item = indexItem {
+                if(item == 0 || item == 1){
+                    if let time = foreCasts[item]?.time{
+                        print(self.appServer.getTimeStamp(forecastTime: time))
+                    }
+                } else {
+                    if let time = foreCasts[item-2]?.time{
+                        print(self.appServer.getTimeStamp(forecastTime: time))
+                    }
+                }
+            }
+        }
+        
+
+//        if foreCastCollectionView.indexPathsForVisibleItems.indices.contains(4){
+//            print(foreCasts[(foreCastCollectionView.indexPathsForVisibleItems[4].item)]?.time)
+//        }
+       
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if foreCastCollectionView.indexPathsForVisibleItems.indices.contains(4){
+            print("Hello" + (foreCasts[(foreCastCollectionView.indexPathsForVisibleItems[4].item)]?.time)!)
+        }
+        print()
     }
     
     @objc func reloadCollectionView(_ notification: Notification) {

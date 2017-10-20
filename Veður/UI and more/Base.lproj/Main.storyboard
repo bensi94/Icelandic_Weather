@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snæfellsnes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Aw-v9-uW6" userLabel="streetlbl">
-                                <rect key="frame" x="132.5" y="105" width="111" height="25"/>
+                                <rect key="frame" x="132" y="105" width="111" height="25"/>
                                 <fontDescription key="fontDescription" name="Raleway-ExtraLightItalic" family="Raleway" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -120,9 +120,15 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Fimmtudagur " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bs6-d2-pfR">
-                                <rect key="frame" x="221.5" y="409.5" width="137.5" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Fimmtudagur " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bs6-d2-pfR">
+                                <rect key="frame" x="227" y="410" width="132" height="24"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19/10" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-84-MxK">
+                                <rect key="frame" x="312.5" y="389.5" width="46.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="20"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -207,12 +213,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UbC-Vx-jmP"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19/10" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-84-MxK">
-                                <rect key="frame" x="312.5" y="389.5" width="46.5" height="20"/>
-                                <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -276,6 +276,8 @@
                     </view>
                     <connections>
                         <outlet property="areaLbl" destination="3Aw-v9-uW6" id="IXO-KJ-9pJ"/>
+                        <outlet property="dateLbl" destination="KeC-84-MxK" id="EIr-3G-MvP"/>
+                        <outlet property="dayLbl" destination="Bs6-d2-pfR" id="Tq8-RH-amV"/>
                         <outlet property="foreCastCollectionView" destination="5AI-jL-nwI" id="Qw0-Dr-xUP"/>
                         <outlet property="heatLbl" destination="lLW-Ca-yEt" id="fcM-0g-VyD"/>
                         <outlet property="stasionLbl" destination="kaD-fo-Ix2" id="mOF-bG-CqD"/>
