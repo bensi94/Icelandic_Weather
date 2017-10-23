@@ -10,5 +10,7 @@ target 'Veður' do
 
 pod 'Alamofire', '~> 4.5'	
 pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
 
 end
