@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GooglePlaces
 
 extension Notification.Name {
     static let reload = Notification.Name("reload")
@@ -21,6 +22,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     var valueConverter = ValueConverter()
     var closestStation: Station?
     var foreCasts = [foreCast?]()
+    var placesClient: GMSPlacesClient!
+    var needsUpdate: Bool = true
+    @IBOutlet weak var bgImg: UIImageView!
     @IBOutlet weak var townLbl: UILabel!
     @IBOutlet weak var areaLbl: UILabel!
     @IBOutlet weak var windDirectionLbl: UILabel!
@@ -41,6 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        placesClient = GMSPlacesClient.shared()
     }
     
     
@@ -116,6 +121,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
                 }
             }
             
+        }
+        
+        if needsUpdate {
+            self.loadFirstPhotoForPlace(placeID: "ChIJUZKzlO4N1UgRC6K9h87sKwU")
+            needsUpdate = false
         }
     }
     
@@ -236,6 +246,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         foreCastCollectionView.reloadData()
         foreCastCollectionView.setContentOffset(.zero, animated: false)
         self.updateForcastDate()
+    }
+    
+    func loadFirstPhotoForPlace(placeID: String) {
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    self.loadImageForMetadata(photoMetadata: firstPhoto)
+                }
+            }
+        }
+    }
+    
+    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
+            (photo, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                self.bgImg.image = photo
+                print(photoMetadata.attributions)
+            }
+        })
     }
     
 
